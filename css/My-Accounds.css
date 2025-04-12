@@ -85,7 +85,7 @@ h1 {
     }
 
     .profile-img {
-        transform: translate(0, 0);
+        transform: translate(0, 20px);
     }
     h1 {
         transform: translate(0, 0);
