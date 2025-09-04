@@ -1,6 +1,15 @@
+:root {
+    --main-color: #3f47e22e;
+    --shadow-color :#86bed85e;
+}
+
+* {
+    caret-color: transparent;
+}
+
 body {
     font-family: "Open Sans", sans-serif;
-    background-color: #f4f4f9;
+    background-color: var(--main-color);
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,73 +19,96 @@ body {
     text-align: center;
 }
 
-
 .container {
-    background: white;
+    background: var(--main-color);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-   width: 400px; 
+   width: 75%; 
 }
 
 .header-section {
     display: flex;
+    flex-direction: column;
+    text-align: center;
     align-items: center;
     gap: 10px;
     margin-bottom: 15px;
-    background-color: #f0f0f0;
+    background-color: var(--main-color);
     border-radius: 10px;
 }
 
 
 .profile {
-    margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .profile-img {
-    width: 80px;
-    height: 80px;
+    position: relative;
+    width: 100px;
+    height: 100px;
     border-radius: 50%; 
     object-fit: cover;
-    border: 3px solid #fff; 
+    border: 3px solid #86bed85e; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    transform: translate(10px, 10px);
+    transform: translate(10px, 20px);
+    transition: 0.3s;
 }
-
+.profile-img:hover {
+    width: 120px;
+    height: 120px;
+    transform: translateY(5px);
+}
 
 h1 {
     font-family: "Work Sans", sans-serif;
     color: #333;
     margin: 0;
-    transform: translate(28px, 3px);
+    transform: translate(10px, 0px);
+    padding: 25px 0 10px;
+    cursor: pointer;
 }
 
 .social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+@media (max-width: 676px) {
+    .social-links {
+    grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .social-link {
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     padding: 0.75rem 1.5rem;
-    background: #f0f0f0;
+    background: var(--main-color);
     color: #333;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s, transform 0.3s;
 }
-
+.social-link,.social-link p,
+.social-link i {
+    transition: 0.3s;
+}
 .social-link:hover {
-    background: #e0e0e0;
-    transform: translateY(-2px);
+    background: var(--main-color);
+    padding: 20px;
+    box-shadow: 0px 10px 10px 0px var(--shadow-color);
 }
 
+.social-link:hover p,
+.social-link:hover i {
+    transform: translateY(-5px);
+}
 .social-link i {
     font-size: 1.2rem;
 }
@@ -98,3 +130,4 @@ h1 {
 .fa-telegram { color: #0088cc; }
 .fa-envelope { color: #d44638; }
 .fa-github { color: #333; }
+.fa-linkedin { color: #0088cc; }
